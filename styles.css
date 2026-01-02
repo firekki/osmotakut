@@ -39,29 +39,29 @@ a:active {
 }
 
 #anc:hover {
-    content: url('images/Ancienth.PNG');
+    content: url('images/Ancienthover.webp');
 }
 
 #dus:hover {
-    content: url('images/Dust2h.PNG');
+    content: url('images/Dust2hover.webp');
 }
 
 #inf:hover {
-    content: url('images/Infernoh.PNG');
+    content: url('images/Infernohover.webp');
 }
 
 #mir:hover {
-    content: url('images/Mirageh.PNG');
+    content: url('images/Miragehover.webp');
 }
 
 #nuk:hover {
-    content: url('images/Nukeh.PNG');
+    content: url('images/Nukehover.webp');
 }
 
 #ove:hover {
-    content: url('images/Overpassh.PNG');
+    content: url('images/Overpasshover.webp');
 }
 
 #tra:hover {
-    content: url('images/Trainh.PNG');
+    content: url('images/Trainhover.webp');
 }
