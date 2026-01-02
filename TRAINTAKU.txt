@@ -1,0 +1,26 @@
+TRAIN A-TAKU
+
+Yksi lähtee murhareikään, polttaa alalipan, savuttaa ylälipan ja ottaa infot B:ltä (holdaa ja tyhjentää popparin, kuuntee B-siten)
+
+Toinen menee kujalla mainin eteen junan nurkkaan
+- heittää connector-savun ja ilmoittaa kun on heittänyt (tähtäys ylinpään sähkölinjaan, seinässä olevan harmaan pellin oikealle puolelle. Hyppyheitto.)
+- heittää poppari-savun (tähtäys seinässä olevan tumman neliön oikeaan alakulmaan. Hyppyheitto)
+- Siirtyy vieressä olevan vihreän kyltin kohdalle kiinni seinään ja kääntyy 180 astetta
+
+Kolmas menee junan taaempien ovien vasemman puoleisen tolpan eteen
+- heittää connector-savun heittäjän ilmotuksesta sänkkärisavun (tähtäys vihreän taulun vasempaan alanurkkaan, normiheitto)
+- heittää kamera-savun (tähtäys kellon keskelle, juoksuhyppyheitto kun tähtäin kellotaulun kutosen kohdalla)
+- mennessään mainiin heittää A-siten päälle valon-kaks ja pyytää lisää valoja connector-savun heittäjältä (kts. seuraava kohta)
+
+Connector-savun heittäjä heittää valot sänkkärisavun heittäjän pyynnöstä mainin yläpuolelle (tähtäys sähkötolpassa olevan peltilaatikon ylälaitaan)
+
+Loput menee mainiin, polttaa seinän, odottaa vihun kamat ja tappaa kaikki.
+
+Ylimääräset kamat heitetään pommijunan taakse ja melluun.
+
+
+TRAININ B-TAKU
+
+Yksi menee höyryn ikkunan oikean puoleisen karmin oikeaan reunaan, tähtäys mustan palkin sekä vasemmalle että oikelle puolelle rakoon (savut tuomaksen vasemmalle ja oikealle puolelle)
+Tolpan keskeltä poltto tuomaksen taakse
+
