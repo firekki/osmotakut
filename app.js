@@ -1,9 +1,23 @@
 // Simple markdown to HTML converter
-function parseMarkdown(md) {
+function parseMarkdown(md, mapId) {
+    // First, handle special blocks before escaping HTML
     let html = md
-        // Escape HTML
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
+        // YouTube embeds: @[youtube](VIDEO_ID)
+        .replace(/@\[youtube\]\(([^)]+)\)/g,
+            '<div class="video-container"><iframe src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe></div>')
+        // Local videos: @[video](path/to/video.mp4)
+        .replace(/@\[video\]\(([^)]+)\)/g, (match, src) => {
+            const fullPath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
+            return `<div class="video-container"><video controls><source src="${fullPath}" type="video/mp4">Video not supported</video></div>`;
+        })
+        // Images: ![alt text](path/to/image.jpg)
+        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+            const fullPath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
+            return `<figure class="tactic-image"><img src="${fullPath}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`;
+        });
+
+    // Now continue with regular markdown parsing
+    html = html
         // Headers
         .replace(/^### (.+)$/gm, '<h3>$1</h3>')
         .replace(/^## (.+)$/gm, '<h2>$1</h2>')
@@ -21,7 +35,7 @@ function parseMarkdown(md) {
         // Wrap consecutive <li> in <ul>
         .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
         // Paragraphs (lines that aren't already wrapped)
-        .replace(/^(?!<[hulo]|<b|<hr)(.+)$/gm, '<p>$1</p>')
+        .replace(/^(?!<[hulo]|<b|<hr|<fig|<div)(.+)$/gm, '<p>$1</p>')
         // Clean up empty paragraphs
         .replace(/<p><\/p>/g, '')
         // Fix nested blockquotes
@@ -39,7 +53,7 @@ async function loadTactics(mapId) {
         const response = await fetch(`tactics/${mapId}/tactics.md`);
         if (response.ok) {
             const markdown = await response.text();
-            tacticsDiv.innerHTML = parseMarkdown(markdown);
+            tacticsDiv.innerHTML = parseMarkdown(markdown, mapId);
         } else {
             tacticsDiv.innerHTML = '<p class="empty">Ei vielä taktiikoita tälle kartalle.</p>';
         }

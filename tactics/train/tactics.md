@@ -15,6 +15,15 @@ Toinen menee kujalla mainin eteen **junan nurkkaan**
 - **Heitto:** Hyppyheitto
 - ⚠️ **Ilmoita kun olet heittänyt!**
 
+<!-- KUVAN LISÄYS: Laita kuva images/ kansioon ja käytä näin: -->
+<!-- ![Connector-savu lineup](images/connector-smoke.jpg) -->
+
+<!-- VIDEON LISÄYS: Laita video videos/ kansioon ja käytä näin: -->
+<!-- @[video](videos/connector-smoke.mp4) -->
+
+<!-- YOUTUBE VIDEON LISÄYS: Kopioi video ID URLista ja käytä näin: -->
+<!-- @[youtube](dQw4w9WgXcQ) -->
+
 ### Poppari-savu
 - **Tähtäys:** Seinässä olevan tumman neliön oikeaan alakulmaan
 - **Heitto:** Hyppyheitto
