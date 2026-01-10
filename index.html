@@ -1,24 +1,103 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Osmotakut</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    </head>
-    <body>
-        <iframe src="navigation.html" style="width: 100%; height: 175px; border: none;" title="Navigation"></iframe>
-        <hr>
-        <br>
-        <table style="width:100%;">
-            <tr>
-                <th>
-                    <h1 style="font-size: 300%;">Osmotakut</h1>
-                    <p style="font-size: 200%;">Tältä sivulta löytyy Osmottaren takukirja. Valitse kartta tuosta ylhäältä.</p>
-                    <p>Jokaiseen karttaan yleisimmät savulinarien screenshotit, jaoteltuna CT - T sekä sitet A - B.</p>
-                    <p>Mahdollisesti myös kuvat minimapista sekä minibaarin sisällöstä.</p>
-                </th>
-            </tr>
-        </table>
-        
-    </body>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmotakut</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <!-- Map selector -->
+    <nav class="map-nav">
+        <a href="#ancient" data-map="ancient"><img src="images/Ancient.webp" alt="Ancient" id="anc"></a>
+        <a href="#dust2" data-map="dust2"><img src="images/Dust2.webp" alt="Dust2" id="dus"></a>
+        <a href="#inferno" data-map="inferno"><img src="images/Inferno.webp" alt="Inferno" id="inf"></a>
+        <a href="#mirage" data-map="mirage"><img src="images/Mirage.webp" alt="Mirage" id="mir"></a>
+        <a href="#nuke" data-map="nuke"><img src="images/Nuke.webp" alt="Nuke" id="nuk"></a>
+        <a href="#overpass" data-map="overpass"><img src="images/Overpass.webp" alt="Overpass" id="ove"></a>
+        <a href="#train" data-map="train"><img src="images/Train.webp" alt="Train" id="tra"></a>
+    </nav>
+
+    <hr>
+
+    <!-- Content area - changes based on selected map -->
+    <main id="content">
+        <!-- Home content (shown by default) -->
+        <section id="home" class="map-content active">
+            <h1>Osmotakut</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja. Valitse kartta tuosta ylhäältä.</p>
+            <p>Jokaiseen karttaan yleisimmät savulinarien screenshotit, jaoteltuna CT - T sekä sitet A - B.</p>
+            <p>Mahdollisesti myös kuvat minimapista sekä minibaarin sisällöstä.</p>
+        </section>
+
+        <!-- Ancient -->
+        <section id="ancient" class="map-content">
+            <h1>Ancient</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Ancientiin</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+
+        <!-- Dust2 -->
+        <section id="dust2" class="map-content">
+            <h1>Dust2</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Dust2:een</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+
+        <!-- Inferno -->
+        <section id="inferno" class="map-content">
+            <h1>Inferno</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Infernoon</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+
+        <!-- Mirage -->
+        <section id="mirage" class="map-content">
+            <h1>Mirage</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Mirageen</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+
+        <!-- Nuke -->
+        <section id="nuke" class="map-content">
+            <h1>Nuke</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Nukeen</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+
+        <!-- Overpass -->
+        <section id="overpass" class="map-content">
+            <h1>Overpass</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Overpassiin</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+
+        <!-- Train -->
+        <section id="train" class="map-content">
+            <h1>Train</h1>
+            <p class="lead">Tältä sivulta löytyy Osmottaren takukirja Trainiin</p>
+            <div class="tactics">
+                <!-- Tactics will go here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
 </html>

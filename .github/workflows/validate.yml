@@ -1,0 +1,43 @@
+name: Validate Site
+
+on:
+  push:
+    branches: [main, feature/*]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          echo "Checking core files..."
+          test -f index.html || (echo "❌ Missing index.html" && exit 1)
+          test -f app.js || (echo "❌ Missing app.js" && exit 1)
+          test -f styles.css || (echo "❌ Missing styles.css" && exit 1)
+          echo "✅ Core files OK"
+
+      - name: Check tactics structure
+        run: |
+          echo "Checking tactics files..."
+          for map in ancient dust2 inferno mirage nuke overpass train; do
+            test -f "tactics/$map/tactics.md" || (echo "❌ Missing tactics/$map/tactics.md" && exit 1)
+          done
+          echo "✅ All tactics files exist"
+
+      - name: Check map images
+        run: |
+          echo "Checking map images..."
+          for map in Ancient Dust2 Inferno Mirage Nuke Overpass Train; do
+            test -f "images/$map.webp" || (echo "❌ Missing images/$map.webp" && exit 1)
+          done
+          echo "✅ All map images exist"
+
+      - name: Validate HTML
+        run: |
+          echo "Basic HTML validation..."
+          grep -q "<html" index.html && grep -q "</html>" index.html
+          echo "✅ HTML structure OK"

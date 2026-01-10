@@ -3,17 +3,22 @@ body {
   color: #FFFFFF;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-table, th, td {
+
+table,
+th,
+td {
   border: 1px solid #555555;
   border-collapse: collapse;
   padding-left: 10px;
   padding-right: 10px;
   border-style: hidden;
 }
+
 img {
   border-radius: 30px;
   max-width: 100%;
 }
+
 a:link {
   color: #d4aa00;
   background-color: transparent;
@@ -39,29 +44,212 @@ a:active {
 }
 
 #anc:hover {
-    content: url('images/Ancienthover.webp');
+  content: url('images/Ancienthover.webp');
 }
 
 #dus:hover {
-    content: url('images/Dust2hover.webp');
+  content: url('images/Dust2hover.webp');
 }
 
 #inf:hover {
-    content: url('images/Infernohover.webp');
+  content: url('images/Infernohover.webp');
 }
 
 #mir:hover {
-    content: url('images/Miragehover.webp');
+  content: url('images/Miragehover.webp');
 }
 
 #nuk:hover {
-    content: url('images/Nukehover.webp');
+  content: url('images/Nukehover.webp');
 }
 
 #ove:hover {
-    content: url('images/Overpasshover.webp');
+  content: url('images/Overpasshover.webp');
 }
 
 #tra:hover {
-    content: url('images/Trainhover.webp');
+  content: url('images/Trainhover.webp');
+}
+
+/* Single page layout */
+.map-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.map-nav a {
+  display: block;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0.7;
+}
+
+.map-nav a:hover,
+.map-nav a.active {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.map-nav img {
+  height: 120px;
+}
+
+/* Content sections */
+.map-content {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.map-content.active {
+  display: block;
+}
+
+.map-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.map-content .lead {
+  font-size: 1.5em;
+  color: #aaa;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tactics container */
+.tactics {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.tactics h1 {
+  font-size: 2em;
+  color: #f97316;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+.tactics h1:first-child {
+  margin-top: 0;
+}
+
+.tactics h2 {
+  font-size: 1.5em;
+  color: #58a6ff;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.tactics h3 {
+  font-size: 1.2em;
+  color: #3fb950;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.tactics p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.tactics ul {
+  margin: 10px 0 10px 20px;
+}
+
+.tactics li {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.tactics strong {
+  color: #f97316;
+}
+
+.tactics hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 25px 0;
+}
+
+.tactics blockquote {
+  background: #252525;
+  border-left: 4px solid #58a6ff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.tactics .empty {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Images */
+.tactics .tactic-image {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.tactics .tactic-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.tactics .tactic-image img:hover {
+  transform: scale(1.02);
+}
+
+.tactics .tactic-image figcaption {
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Videos */
+.tactics .video-container {
+  margin: 20px 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+
+.tactics .video-container iframe,
+.tactics .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
