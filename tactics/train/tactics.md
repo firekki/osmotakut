@@ -2,16 +2,18 @@
 
 ## Pelaaja 1 – Infot
 
-Yksi lähtee **murhareikään**, polttaa alalipan, savuttaa ylälipan ja ottaa infot B:ltä (holdaa ja tyhjentää popparin, kuuntee B-siten)
+- Lähtee **murhareikään**, polttaa alalipan, savuttaa ylälipan ja ottaa infot B:ltä (holdaa ja tyhjentää popparin, kuuntelee B-siten)
 
 ---
 
 ## Pelaaja 2 – Connector-savut
 
-Toinen menee kujalla mainin eteen **junan nurkkaan**
+- Menee kujalla mainin eteen **junan nurkkaan**
+![Connector-savun heittopaikka](images/t_savu_poppari_heittopaikka.jpg)
 
 ### Connector-savu
 - **Tähtäys:** Ylinpään sähkölinjaan, seinässä olevan harmaan pellin oikealle puolelle
+![Connector-savu](images/t_savu_konnu_a.jpg)
 - **Heitto:** Hyppyheitto
 - ⚠️ **Ilmoita kun olet heittänyt!**
 
@@ -26,31 +28,39 @@ Toinen menee kujalla mainin eteen **junan nurkkaan**
 
 ### Poppari-savu
 - **Tähtäys:** Seinässä olevan tumman neliön oikeaan alakulmaan
+![Poppari-savu](images/t_savu_poppari.jpg)
 - **Heitto:** Hyppyheitto
 
 ### Siirtyminen
 - Siirtyy vieressä olevan vihreän kyltin kohdalle kiinni seinään
+![A-valon heittopaikka](images/t_valo_a_heittopaikka.jpg)
 - Kääntyy 180 astetta
 - Heittää valot mainin yläpuolelle kun sänkkärisavun heittäjä pyytää
-  - **Tähtäys:** Sähkötolpassa olevan peltilaatikon ylälaitaan
+- **Tähtäys:** Sähkötolpassa olevan peltilaatikon ylälaitaan
+![A-valo](images/t_valo_a.jpg)
+- **Heitto:** Hyppyheitto
 
 ---
 
 ## Pelaaja 3 – Sänkkäri & Kamera
 
-Kolmas menee **junan taaempien ovien vasemman puoleisen tolpan eteen**
+- Kolmas menee **junan taaempien ovien vasemman puoleisen tolpan eteen**
+![Sänkkäri-savun heittopaikka](images/t_savu_kamera_heittopaikka.jpg)
 
 ### Sänkkäri-savu
 - **Tähtäys:** Vihreän taulun vasempaan alanurkkaan
-- **Heitto:** Normiheitto
+![Sänkkäri-savu](images/t_savu_sankkari.jpg)
+- **Heitto:** Hyppyheitto
 - ⏰ Heitä kun connector-savun heittäjä ilmoittaa
 
 ### Kamera-savu
 - **Tähtäys:** Kellon keskelle
+![Kamera-savu](images/t_savu_kamera_1.jpg)
 - **Heitto:** Juoksuhyppyheitto kun tähtäin kellotaulun kutosen kohdalla
+![Kamera-savun heitto](images/t_savu_kamera_2.jpg)
 
 ### Flashit mainiin
-- Mennessään mainiin heittää A-siten päälle **valo kaks**
+- Mennessään mainiin heittää A-siten päälle **valon kaks**
 - Pyytää lisää valoja connector-savun heittäjältä
 
 ---

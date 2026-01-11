@@ -213,15 +213,15 @@ a:active {
 }
 
 .tactics .tactic-image img {
-  max-width: 100%;
+  max-width: 84%;
   border-radius: 8px;
   border: 2px solid #333;
-  cursor: pointer;
+  cursor: default;
   transition: transform 0.2s;
 }
 
 .tactics .tactic-image img:hover {
-  transform: scale(1.02);
+  transform: scale(1.20);
 }
 
 .tactics .tactic-image figcaption {
