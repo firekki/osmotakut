@@ -206,22 +206,24 @@ a:active {
   padding: 40px;
 }
 
-/* Images */
+/* Images - Thumbnails */
 .tactics .tactic-image {
   margin: 20px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .tactics .tactic-image img {
-  max-width: 84%;
+  max-width: 400px;
+  width: 100%;
   border-radius: 8px;
   border: 2px solid #333;
-  cursor: default;
-  transition: transform 0.2s;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .tactics .tactic-image img:hover {
-  transform: scale(1.20);
+  transform: scale(1.02);
+  border-color: #58a6ff;
 }
 
 .tactics .tactic-image figcaption {
@@ -229,6 +231,52 @@ a:active {
   font-size: 0.9em;
   margin-top: 8px;
   font-style: italic;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
 }
 
 /* Videos */
