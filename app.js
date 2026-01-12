@@ -1,3 +1,6 @@
+// Site base URL for wsrv.nl image proxy
+const SITE_BASE_URL = 'https://firekki.github.io/osmotakut';
+
 // Simple markdown to HTML converter
 function parseMarkdown(md, mapId) {
     // First, handle special blocks before escaping HTML
@@ -10,10 +13,12 @@ function parseMarkdown(md, mapId) {
             const fullPath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
             return `<div class="video-container"><video controls><source src="${fullPath}" type="video/mp4">Video not supported</video></div>`;
         })
-        // Images: ![alt text](path/to/image.jpg)
+        // Images: ![alt text](path/to/image.jpg) - uses wsrv.nl for thumbnails
         .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
-            const fullPath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
-            return `<figure class="tactic-image"><img src="${fullPath}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`;
+            const relativePath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
+            const fullImageUrl = src.startsWith('http') ? src : `${SITE_BASE_URL}/${relativePath}`;
+            const thumbnailUrl = `https://wsrv.nl/?url=${encodeURIComponent(fullImageUrl)}&w=400&q=70`;
+            return `<figure class="tactic-image"><img src="${thumbnailUrl}" data-full-src="${fullImageUrl}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`;
         });
 
     // Now continue with regular markdown parsing
@@ -99,4 +104,44 @@ window.addEventListener('hashchange', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const mapId = window.location.hash.slice(1);
     showMap(mapId || 'home');
+
+    // Create lightbox element
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.innerHTML = `
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    // Open lightbox on image click
+    document.addEventListener('click', (e) => {
+        const img = e.target.closest('.tactic-image img');
+        if (img && img.dataset.fullSrc) {
+            lightboxImg.src = img.dataset.fullSrc;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    // Close lightbox functions
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
 });
