@@ -133,7 +133,7 @@ a:active {
 .tactics {
   margin-top: 30px;
   text-align: left;
-  max-width: 1100px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -208,12 +208,11 @@ a:active {
 
 /* Images - Thumbnails */
 .tactics .tactic-image {
-  margin: 20px 0;
   text-align: left;
 }
 
 .tactics .tactic-image img {
-  max-width: 400px;
+  max-width: 600px;
   width: 100%;
   border-radius: 8px;
   border: 2px solid #333;
@@ -223,13 +222,13 @@ a:active {
 
 .tactics .tactic-image img:hover {
   transform: scale(1.02);
-  border-color: #58a6ff;
+  border-color: #f97316;
 }
 
 .tactics .tactic-image figcaption {
   color: #888;
   font-size: 0.9em;
-  margin-top: 8px;
+  margin-top: 0px;
   font-style: italic;
 }
 
@@ -299,4 +298,8 @@ a:active {
   width: 100%;
   height: 100%;
   border-radius: 8px;
+}
+
+footer {
+  text-align: center;
 }
