@@ -19,3 +19,8 @@
 ## CT-Side
 
 *Lisää taktiikat tähän...*
+
+---
+
+## Youtube-video
+@[youtube](2U2WdW_F2Ig)
