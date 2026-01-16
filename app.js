@@ -70,13 +70,14 @@ async function loadTactics(mapId) {
 // Load frontpage markdown content
 async function loadFrontpage() {
     const frontpageDiv = document.querySelector('#home .frontpage-content');
-    if (!frontpageDiv || frontpageDiv.innerHTML.trim() !== '') return;
+    if (!frontpageDiv || frontpageDiv.dataset.loaded) return;
 
     try {
         const response = await fetch('frontpage.md');
         if (response.ok) {
             const markdown = await response.text();
-            frontpageDiv.innerHTML = parseMarkdown(markdown, 'home');
+            frontpageDiv.insertAdjacentHTML('beforeend', parseMarkdown(markdown, 'home'));
+            frontpageDiv.dataset.loaded = 'true';
         }
     } catch (e) {
         console.error('Failed to load frontpage:', e);
