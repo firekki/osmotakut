@@ -14,13 +14,13 @@ table {
   padding: 20px;
   background: #1a1a1a;
   border-radius: 10px;
-  table-layout:fixed;
+  table-layout: fixed;
 }
 
 td {
   border-collapse: collapse;
   border-radius: 10px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .frontpage-logo {
@@ -108,6 +108,15 @@ a:active {
 
 .map-nav img {
   height: 100px;
+}
+
+/* Home logo in nav */
+.map-nav .home-link {
+  margin-right: 10px;
+}
+
+.map-nav .home-link img {
+  height: 80px;
 }
 
 /* Content sections */
