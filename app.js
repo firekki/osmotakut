@@ -67,6 +67,22 @@ async function loadTactics(mapId) {
     }
 }
 
+// Load frontpage markdown content
+async function loadFrontpage() {
+    const frontpageDiv = document.querySelector('#home .frontpage-content');
+    if (!frontpageDiv || frontpageDiv.innerHTML.trim() !== '') return;
+
+    try {
+        const response = await fetch('frontpage.md');
+        if (response.ok) {
+            const markdown = await response.text();
+            frontpageDiv.innerHTML = parseMarkdown(markdown, 'home');
+        }
+    } catch (e) {
+        console.error('Failed to load frontpage:', e);
+    }
+}
+
 // Handle map switching based on URL hash
 function showMap(mapId) {
     // Hide all map content sections
@@ -79,9 +95,11 @@ function showMap(mapId) {
     if (target) {
         target.classList.add('active');
 
-        // Load tactics if it's a map page
+        // Load content based on page type
         if (mapId && mapId !== 'home') {
             loadTactics(mapId);
+        } else {
+            loadFrontpage();
         }
     }
 
