@@ -15,6 +15,10 @@ function parseMarkdown(md, mapId) {
         })
         // Images: ![alt text](path/to/image.jpg) - uses wsrv.nl for thumbnails
         .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+            // Handle frontpage logo specially
+            if (mapId === 'home' && src.includes('Osmotar')) {
+                return `<img src="${src}" alt="${alt}" class="frontpage-logo" style="float:right">`;
+            }
             const relativePath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
             const fullImageUrl = src.startsWith('http') ? src : `${SITE_BASE_URL}/${relativePath}`;
             const thumbnailUrl = `https://wsrv.nl/?url=${encodeURIComponent(fullImageUrl)}&w=400&q=70`;
