@@ -15,6 +15,10 @@ function parseMarkdown(md, mapId) {
         })
         // Images: ![alt text](path/to/image.jpg) - uses wsrv.nl for thumbnails
         .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+            // Handle frontpage logo specially
+            if (mapId === 'home' && src.includes('Osmotar')) {
+                return `<img src="${src}" alt="${alt}" class="frontpage-logo" style="float:right">`;
+            }
             const relativePath = src.startsWith('http') ? src : `tactics/${mapId}/${src}`;
             const fullImageUrl = src.startsWith('http') ? src : `${SITE_BASE_URL}/${relativePath}`;
             const thumbnailUrl = `https://wsrv.nl/?url=${encodeURIComponent(fullImageUrl)}&w=400&q=70`;
@@ -67,6 +71,23 @@ async function loadTactics(mapId) {
     }
 }
 
+// Load frontpage markdown content
+async function loadFrontpage() {
+    const frontpageDiv = document.querySelector('#home .frontpage-content');
+    if (!frontpageDiv || frontpageDiv.dataset.loaded) return;
+
+    try {
+        const response = await fetch('frontpage.md');
+        if (response.ok) {
+            const markdown = await response.text();
+            frontpageDiv.insertAdjacentHTML('beforeend', parseMarkdown(markdown, 'home'));
+            frontpageDiv.dataset.loaded = 'true';
+        }
+    } catch (e) {
+        console.error('Failed to load frontpage:', e);
+    }
+}
+
 // Handle map switching based on URL hash
 function showMap(mapId) {
     // Hide all map content sections
@@ -79,9 +100,11 @@ function showMap(mapId) {
     if (target) {
         target.classList.add('active');
 
-        // Load tactics if it's a map page
+        // Load content based on page type
         if (mapId && mapId !== 'home') {
             loadTactics(mapId);
+        } else {
+            loadFrontpage();
         }
     }
 

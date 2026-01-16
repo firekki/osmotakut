@@ -27,6 +27,56 @@ td {
   width: 160px;
   height: 160px;
   margin-right: 5%;
+  margin-top: 25px;
+}
+
+.frontpage-content {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.frontpage-content h1 {
+  font-size: 2em;
+  color: #f97316;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+.frontpage-content h1:first-of-type {
+  margin-top: 0;
+}
+
+.frontpage-content h2 {
+  font-size: 1.5em;
+  color: #58a6ff;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.frontpage-content h3 {
+  font-size: 1.2em;
+  color: #3fb950;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.frontpage-content p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.frontpage-content hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 25px 0;
+  clear: both;
 }
 
 a:link {
