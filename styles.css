@@ -159,6 +159,15 @@ a:active {
   height: 100px;
 }
 
+/* Home logo in nav */
+.map-nav .home-link {
+  margin-right: 10px;
+}
+
+.map-nav .home-link img {
+  height: 80px;
+}
+
 /* Content sections */
 .map-content {
   display: none;
