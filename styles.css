@@ -80,58 +80,33 @@ td {
 }
 
 a:link {
-  color: #d4aa00;
+  color: #f97316;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: #d4aa00;
+  color: #f97316;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #d4aa00;
+  color: #f97316;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:active {
-  color: #d4aa00;
+  color: #f97316;
   background-color: transparent;
   text-decoration: none;
 }
 
-/*
-#anc:hover {
-  content: url('images/Ancienthover.webp');
+.back-to-top-button {
+  text-align: center;
+  font-weight: 600;
 }
-
-#dus:hover {
-  content: url('images/Dust2hover.webp');
-}
-
-#inf:hover {
-  content: url('images/Infernohover.webp');
-}
-
-#mir:hover {
-  content: url('images/Miragehover.webp');
-}
-
-#nuk:hover {
-  content: url('images/Nukehover.webp');
-}
-
-#ove:hover {
-  content: url('images/Overpasshover.webp');
-}
-
-#tra:hover {
-  content: url('images/Trainhover.webp');
-}
-*/
 
 /* Single page layout */
 .map-nav {
@@ -166,7 +141,7 @@ a:active {
 }
 
 .map-nav .home-link img {
-  height: 80px;
+  height: 100px;
 }
 
 /* Content sections */

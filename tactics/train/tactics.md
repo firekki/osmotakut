@@ -100,3 +100,7 @@ Yksi menee **höyryn ikkunan oikean puoleisen karmin oikeaan reunaan**
 ---
 
 > 🚧 B-taku on vielä kesken – täydennetään myöhemmin!
+---
+<div class="back-to-top-button">
+    <a href="#train">Takaisin sivun alkuun &#8593</a>
+</div>

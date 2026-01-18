@@ -24,3 +24,7 @@
 
 ## Youtube-video
 @[youtube](2U2WdW_F2Ig)
+---
+<div class="back-to-top-button">
+    <a href="#ancient">Takaisin sivun alkuun &#8593</a>
+</div>
